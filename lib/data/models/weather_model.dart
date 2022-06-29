@@ -7,7 +7,7 @@ class WeatherModel extends Equatable {
     required this.main,
     required this.description,
     required this.iconCode,
-    required this.temperature,
+    required this.feelsLike,
     required this.pressure,
     required this.humidity,
   });
@@ -16,7 +16,7 @@ class WeatherModel extends Equatable {
   final String main;
   final String description;
   final String iconCode;
-  final double temperature;
+  final double feelsLike;
   final int pressure;
   final int humidity;
 
@@ -25,7 +25,8 @@ class WeatherModel extends Equatable {
         main: json['weather'][0]['main'],
         description: json['weather'][0]['description'],
         iconCode: json['weather'][0]['icon'],
-        temperature: json['main']['temp'],
+        //TODO: Check if this is the right approach
+        feelsLike: json['main']['feels_like'].toDouble(),
         pressure: json['main']['pressure'],
         humidity: json['main']['humidity'],
       );
@@ -39,7 +40,7 @@ class WeatherModel extends Equatable {
           },
         ],
         'main': {
-          'temp': temperature,
+          'feels_like': feelsLike,
           'pressure': pressure,
           'humidity': humidity,
         },
@@ -51,7 +52,7 @@ class WeatherModel extends Equatable {
         main: main,
         description: description,
         iconCode: iconCode,
-        temperature: temperature,
+        feelsLike: feelsLike,
         pressure: pressure,
         humidity: humidity,
       );
@@ -62,7 +63,7 @@ class WeatherModel extends Equatable {
         main,
         description,
         iconCode,
-        temperature,
+        feelsLike,
         pressure,
         humidity,
       ];

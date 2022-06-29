@@ -12,7 +12,7 @@ void main() {
     main: 'Clouds',
     description: 'few clouds',
     iconCode: '02d',
-    temperature: 302.28,
+    feelsLike: 302.28,
     pressure: 1009,
     humidity: 70,
   );
@@ -22,7 +22,7 @@ void main() {
     main: 'Clouds',
     description: 'few clouds',
     iconCode: '02d',
-    temperature: 302.28,
+    feelsLike: 302.28,
     pressure: 1009,
     humidity: 70,
   );
@@ -73,7 +73,7 @@ void main() {
             }
           ],
           'main': {
-            'temp': 302.28,
+            'feels_like': 302.28,
             'pressure': 1009,
             'humidity': 70,
           },
